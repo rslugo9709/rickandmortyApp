@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+
+  background-image: url("https://www.teahub.io/photos/full/12-124362_wallpaper-rick-morty-with-image-resolution-pixel-rick.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+

@@ -1,0 +1,62 @@
+
+
+.card{
+    margin: 10px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.484);
+    color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50px;
+    width: 30%;
+    
+    
+}
+.link{
+    text-decoration: none;
+    color:inherit;
+}
+.card:hover{
+    box-shadow: 0 0 10px 10px rgb(233, 233, 233);
+
+}
+
+.card button{
+    cursor: pointer;
+}
+
+.imagenes{
+    height: 80%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.cerrar{
+    width: 30px;
+    height: 30px;
+}
+
+.cerrar:hover{
+    color: white;
+    background-color: black;
+    border-color: rgb(134, 25, 133);
+}
+
+
+@media screen and (max-width: 900px) {
+    .card{
+        font-size: 0.6rem;
+        border-radius: 20px;
+    }
+    .imagenes{
+        border-radius: 20px;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .card{
+        font-size: 0.3rem;
+    }
+
+}
