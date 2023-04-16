@@ -1,0 +1,29 @@
+
+.container{
+  display: flex;
+  justify-content: center;
+  
+
+  padding-left: 20px;
+  background-color: rgba(0, 0, 0, 0.753);
+  color: white;
+  width: 50%;
+  height: 500px;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.boton{
+  width: 150px;
+  height: 25px;
+  margin-left: 20px;
+  border-radius: 20px;
+}
+h1{
+  font-size: 50px;
+}
+
+.carta{
+  background-color: black;
+  color: white;
+}

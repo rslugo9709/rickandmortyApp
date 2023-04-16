@@ -3,7 +3,7 @@ import styles from "./credentials.module.css"
 import { useState } from "react";
 import { validation } from "./validations";
 
-export default function Credentials(){
+export default function Credentials(props){
 
     const [userData, setUserData] = useState({
         username:"",
@@ -31,6 +31,7 @@ export default function Credentials(){
 
     function handleSubmit(e){
         e.preventDefault();
+        props.login(userData);
     }
 
     return(
@@ -54,7 +55,9 @@ export default function Credentials(){
 
                     <br />
                     <br />
+                    <div className={styles.submitB}>
                     <button type="submit" className={styles.login}> Login </button>
+                    </div>
                     </fieldset>
             </form>
         </div>

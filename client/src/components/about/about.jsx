@@ -6,6 +6,7 @@ export default function about(){
         <div id={styles.container}>
             About
             <h1> Welcome to Rick & Morty app</h1>
+            
             <h3>Created by Raul Lugo</h3>
             <img src={require("../../images/foto.jpg")} alt="This should be my foto"></img>
             <br />

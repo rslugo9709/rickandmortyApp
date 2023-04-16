@@ -14,6 +14,7 @@ export default function Nav(props){
                 <div className= {styles.container}>
                     <Link to={"/home"} className={styles.links}>Home</Link>
                     <Link to={"/about"} className={styles.links}>About</Link>
+                    <Link to={"/favorites"} className={styles.links}>Favorites </Link>
                 </div>
             <SearchBar onSearch={props.onSearch} />
             </nav>

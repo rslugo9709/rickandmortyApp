@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { Reducer } from "react";
+import reducer from "./reducer";
 
 //creamos nuestro store
 //el store envuelve a nuestro reducer

@@ -2,26 +2,42 @@ import './App.css'
 import Cards from './components/cards/Cards.jsx'
 
 //import characters from './data.js'
+
+//import styles from "./components/cards/cards.module.css";
+import { useEffect, useState} from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+//importamos los componentes
 import Nav from './components/nav/nav.jsx'
-import styles from "./components/cards/cards.module.css";
-import { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
 import About from './components/about/about.jsx'
-import Details from './components/detail/detail.jsx'
+import Detail from './components/detail/detail.jsx'
 import Login from './components/login/login.jsx';
 import Credentials from './components/credentials/credentials.jsx';
+import Favorites from './components/favorites/favorites';
 
 //import "./components/card/card.module.css"
 function App () {
+  const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const location = useLocation();
 
   const [access, setAccess] = useState(false);
-  const userName = "rslugo@uninorte.edu.co";
-  const password = "holi123";
+  const userName = "ras@norte.com";
+  const password = "Holi123";
   
 
+  //seteamos el acceso a la aplicacion
+  const ingresar = (userData) =>{
+    //console.log(userData)
+    if((userData.username === userName) && (userData.password === password )){
+      //console.log("si está entrando")
+      setAccess(true);
+      navigate("/home");
 
+    }else{
+      console.log("no son iguales")
+    }
+
+  }
 
   const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
@@ -41,6 +57,10 @@ function App () {
     setCharacters(characters.filter(char => char.id !== id))
   } 
 
+
+  useEffect(() =>{
+    !access && navigate("/");
+  }, [access]);
   //Routes es el arbol que tiene todas las rutas
   //se coloca en el element el elemento que se quiere renderizar, es decir que se quiere que aparezca en pantalla
 
@@ -55,18 +75,16 @@ function App () {
       <Routes>
         {/* Se coloca en el element se guarda las opciones que el usuario habia renderizado antes.  */}
         <Route path='/' element={<Login />} />
-        <Route path='/credentials' element={<Credentials />} />
+        <Route path='/credentials' element={<Credentials login={ingresar}/>} />
         <Route path='/home' element={<Cards characters={characters}
           onClose={onClose}/>} />
-
-        
         <Route path='/about' element={<About/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
         {/* La ruta del detail id es dinamica, es decir, cambia segun el props que se pase*/}
-        <Route path='/detail/:detailId' element={<Details />} />
+        <Route path='/detail/:detailId' element={<Detail />} />
         
       </Routes>
-      <div className={styles.container}>
-      </div>
+
       {
 
         /* 
