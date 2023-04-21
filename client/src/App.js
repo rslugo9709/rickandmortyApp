@@ -40,10 +40,10 @@ function App () {
   }
 
   const onSearch = (character) => {
-    fetch(`https://rickandmortyapi.com/api/character/${character}`)
+    fetch(`http://localhost:3001/rickandmorty/character/${character}`)
     .then((response) => response.json())
     .then((data) => {
-
+      console.log(data);
        if (data.name) { 
           setCharacters((oldChars) => [...oldChars, data]);
        } else {
